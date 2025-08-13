@@ -2,7 +2,7 @@
 title: 'Factory Method'
 description: 'Creando objetos sin acoplar tu código'
 pubDate: 'Jul 26 2025'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-4.jpg'
 ---
 
 #### Introducción
@@ -11,7 +11,7 @@ En algunos proyectos puede pasar que el código para crear un objeto termine dis
 #### El problema a resolver
 - Cuando se crean instancias en distintos lugares obligando a cambiarlas cada que se agregan nuevas variantes.
 
-```C#
+```csharp
 public void GenerateReport(string type)
 {
   if(type == "PDF")
@@ -28,14 +28,14 @@ public void GenerateReport(string type)
 - **Objetivo** Permitir que las subclases decidan que clase instanciar.
 
 **Interfaz base**
-```C#
+```csharp
 public interface IReport
 {
   void Generate();
 }
 ```
 **Clases concretas**
-```C#
+```csharp
 public class PdfReport : IReport
 {
     public void Generate() => Console.WriteLine("Generando reporte en PDF");
@@ -47,7 +47,7 @@ public class ExcelReport : IReport
 }
 ```
 **Creador base**
-```C#
+```csharp
 public abstract class ReportCreator
 {
     public abstract IReport CreateReport();
@@ -60,7 +60,7 @@ public abstract class ReportCreator
 }
 ```
 **Creadores concretos**
-```C#
+```csharp
 public class PdfReportCreator : ReportCreator
 {
     public override IReport CreateReport() => new PdfReport();
@@ -73,7 +73,7 @@ public class ExcelReportCreator : ReportCreator
 ```
 
 De esta forma podemos usarlo así:
-```C#
+```csharp
 ReportCreator creator = new PdfReportCreator();
 creator.GenerateReport();
 

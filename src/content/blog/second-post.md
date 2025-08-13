@@ -2,7 +2,7 @@
 title: 'Patrón Builder'
 description: 'Creando objetos complejos paso a paso'
 pubDate: 'Jul 19 2025'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 #### Introducción
@@ -13,7 +13,7 @@ En una aplicación no todos los objetos se crean con un simple *new*. En ocasion
 - Un constructor muy extenso que recibe varios parámetros.
 - Dificultad para recordar el orden de los argumentos y leer el código.
 
-```C#
+```csharp
 var report = new Report(
   "Ventas 2025",
   "Resumen mensual",
@@ -28,7 +28,7 @@ El anterior es un ejemplo claro de como la cantidad de parámetros puede llegar 
 #### Aplicando el patrón Builder
 - **Objetivo:** Separar la construcción de un objeto de su representación final a la vez que permite construir el objeto de distintas formas.
 
-```C#
+```csharp
 public class Report
 {
     public string Title { get; private set; }
@@ -86,7 +86,7 @@ public class Report
 ```
 
 De esta forma podemos usarlo así:
-```C#
+```csharp
 var report = new Report.Builder()
     .WithTitle("Ventas 2025")
     .WithDescription("Resumen mensual")

@@ -2,7 +2,7 @@
 title: 'Por qué importan las buenas prácticas'
 description: 'Principios y recomendaciones para un código legible'
 pubDate: 'Jul 12 2025'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 
 En el mundo del desarrollo de software es fácil dejarse llevar por la urgencia del "Hacer que funcione" y olvidar que el código que se escribe hoy deberá ser mantenido en el mañana, ya sea por nosotros mismos o quizá por alguien más.
