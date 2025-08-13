@@ -1,0 +1,69 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Bienvenido a mi blog</h1>
+			<h5>
+				Un espacio donde comparto mi experiencia en el camino como desarrollador
+				de software
+			</h5>
+			<p>
+				Aquí comparto ideas, tutoriales y ejemplos prácticos sobre programación
+				arquitectura de software y patrones de diseño. Mi objetivo es ayudar a
+				los desarrolladores - desde principiantes y porque no hasta
+				profesionales experimentados - a escribir código mas limpio, mantenible
+				y escalable.
+			</p>
+			<p>
+				Aquí encontrarás artículos sobre buenas prácticas, enfoques para
+				resolver problemas y los principios detrás de un diseño de software
+				robusto. Ya sea que quieras explorar nuevas tecnologías, perfeccionar tu
+				estilo de programación o profundizar en el arte de crear buen software,
+				estás en el lugar correcto.
+			</p>
+			<p>
+				Este blog no pretende ser una guía definitiva sino un lugar donde
+				documentar conocimientos, reflexiones y soluciones que me han resultado
+				útiles, con el ánimo de que te puedan servir como referencia para
+				avanzar.
+			</p>
+			<p>Aquí un breve listado sobre los lenguajes, tecnologías y áreas de interés:</p>
+			<h5>Lenguajes</h5>
+			<ul>
+				<li>C#/.Net</li>
+				<li>Python</li>
+				<li>Javascript / Typescript</li>
+				<li>Node.js</li>
+			</ul>
+			<h5>Tecnologías</h5>
+			<ul>
+				<li>Azure</li>
+				<li>SQL Server</li>
+				<li>Git & Github</li>
+			</ul>
+			<h5>Áreas de interés</h5>
+			<ul>
+				<li>Desarrollo web/móvil/desktop</li>
+				<li>Análisis de datos</li>
+				<li>Patrones de diseño</li>
+				<li>Criptografía</li>
+				<li>Buenas prácticas de programación</li>
+			</ul>
+			<p>
+				Aprendo, documento y comparto. Si algo de lo que lees aquí te aporta valor, habrá valido la pena.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
