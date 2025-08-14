@@ -1,5 +1,5 @@
 ---
-title: 'Factory Method'
+title: 'Patrón Factory Method'
 description: 'Creando objetos sin acoplar tu código'
 pubDate: 'Jul 26 2025'
 heroImage: '../../assets/blog-placeholder-4.jpg'

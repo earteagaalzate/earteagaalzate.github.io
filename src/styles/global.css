@@ -153,3 +153,18 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+.blog-search {
+	display: flex;
+	width: 100vw;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+}
+
+#search-input {
+	width: 20vw;
+	padding: 4px;
+	border-radius: 4px;
+	text-align: center;
+}

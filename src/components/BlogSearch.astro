@@ -1,0 +1,63 @@
+<div class="blog-search">
+  <input
+    id="search-input"
+    type="text"
+    placeholder="Buscar en el blog..."
+    autocomplete="off"
+  />
+  <ul id="search-results"></ul>
+</div>
+
+<script is:inline>
+  let posts = [];
+  let loaded = false;
+
+  function norm(s) {
+    return s
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  }
+
+  async function ensureData() {
+    if (loaded) return;
+    const res = await fetch('/blog-data.json');
+    posts = await res.json();
+    loaded = true;
+  }
+
+  async function onInput(e) {
+    const q = e.target.value.trim();
+    const resultsEl = document.getElementById('search-results');
+
+    if (q === '') {
+      resultsEl.innerHTML = '';
+      return;
+    }
+
+    await ensureData();
+
+    const nq = norm(q);
+    const results = posts.filter(p => {
+      const t = norm(p.title || '');
+      const d = norm(p.description || '');
+      return t.includes(nq) || d.includes(nq);
+    });
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = '<li>Sin resultados</li>';
+      return;
+    }
+
+    resultsEl.innerHTML = results
+      .map(r => `
+        <li>
+          <a href="${r.url}">${r.title}</a>
+          <p>${r.description ?? ''}</p>
+        </li>
+      `)
+      .join('');
+  }
+
+  document.getElementById('search-input').addEventListener('input', onInput);
+</script>
